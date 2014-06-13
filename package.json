@@ -1,0 +1,20 @@
+{
+  "name": "starterplate-wordpress",
+  "version": "0.0.0",
+  "description": "A stripped down starting point for WordPress themes.",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dansundy/starterplate-wordpress.git"
+  },
+  "author": "Daniel Sundy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dansundy/starterplate-wordpress/issues"
+  },
+  "homepage": "https://github.com/dansundy/starterplate-wordpress",
+  "devDependencies": {
+    "gulp": "~3.8.0",
+    "gulp-ruby-sass": "~0.5.0"
+  }
+}
