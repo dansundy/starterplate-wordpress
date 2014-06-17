@@ -18,8 +18,12 @@ Install the needed node packages in the root of the theme:
 	$ cd [themename]
 	
 	$ npm install
+
+Update the information in the `package.json` file. All the data at the top of the `style.css` template is automatically pulled from there.
 	
 Log in to your WordPress dashboard and select the theme marked (development).
+
+## Deployment
 
 To create a deployment build run:
 
