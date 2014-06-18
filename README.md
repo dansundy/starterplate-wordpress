@@ -7,7 +7,7 @@ Like my [WordPress Boilerplate](https://github.com/dansundy/boilerplate-wordpres
 
 Set up a WordPress build.
 
-Clone this repository into the Themes directory:
+Clone this repository into the `themes` directory:
 
 	$ cd root/wp-content/themes
 	
@@ -31,8 +31,10 @@ To create a deployment build run:
 	
 This will create a production theme in the `deploy` folder.
 
+## Notes
+
 *(This repository is currently very much in development.)*
 
 ## TO DO
 
-* Uh, make it.
+* Lots

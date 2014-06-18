@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/dansundy/starterplate-wordpress",
   "config": {
-    "title": "WordPress Starterplate"
+    "title": "WordPress Starterplate",
+    "slug": "wpstarter"
   },
   "devDependencies": {
     "gulp": "~3.8.0",

@@ -38,7 +38,7 @@ var styles = function(env) {
     .pipe(replace('{{authorURI}}', data.author.url))
     .pipe(replace('{{description}}', data.description))
     .pipe(replace('{{version}}', data.version))
-    .pipe(replace('{{textDomain}}', data.name))
+    .pipe(replace('{{textDomain}}', data.config.slug))
     .pipe(replace('{{themeName}}', function() {
       var string = data.config.title;
       if (env === 'src') {
