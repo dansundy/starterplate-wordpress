@@ -47,7 +47,7 @@ var styles = function(env) {
       return string;
     }))
     .pipe(gulp.dest(path[env].base))
-    .pipe(livereload({auto: false}));
+    .pipe(livereload());
 }
 
 var scripts = function(env) {
@@ -71,7 +71,7 @@ var scripts = function(env) {
     .pipe(gulp.dest(path.src.scripts))
     .pipe(uglify())
     .pipe(gulp.dest(path.deploy.scripts))
-    .pipe(livereload({auto: false}));
+    .pipe(livereload());
 }
 
 var move = function() {
