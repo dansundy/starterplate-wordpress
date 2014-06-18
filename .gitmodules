@@ -1,0 +1,3 @@
+[submodule "src/inc/admin-classes"]
+	path = src/inc/admin-classes
+	url = git@bitbucket.org:dansundy/wp-admin-inc.git

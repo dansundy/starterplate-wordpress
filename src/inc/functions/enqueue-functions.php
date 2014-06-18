@@ -11,7 +11,7 @@ if ( ! function_exists( 'helios_scripts' ) ) :
     // wp_enqueue_style( 'old-ie', get_template_directory_uri() . '/css/oldie.css', array( 'style' ), null );
     // wp_style_add_data( 'old-ie', 'conditional', 'lt IE 9' );
 
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/lib/main.dev.js', array( 'jquery' ), null, false );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.dev.js', array( 'jquery' ), null, false );
   }
 
 endif;
