@@ -4,11 +4,13 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     clean        = require('gulp-clean'),
     concat       = require('gulp-concat'),
+    imagemin     = require('gulp-imagemin'),
     jshint       = require('gulp-jshint'),
     livereload   = require('gulp-livereload'),
     rename       = require('gulp-rename'),
     replace      = require('gulp-replace'),
     sass         = require('gulp-ruby-sass'),
+    svgmin       = require('gulp-svgmin'),
     uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
@@ -16,11 +18,13 @@ var path = {
   src: {
     base: './src',
     styles: './src/sass',
-    scripts: './src/js'
+    scripts: './src/js',
+    assets: './src/assets'
   },
   deploy: {
     base: './deploy',
-    scripts: './deploy/js'
+    scripts: './deploy/js',
+    assets: './deploy/assets'
   }
 }
 
@@ -47,7 +51,7 @@ var styles = function(env) {
       return string;
     }))
     .pipe(gulp.dest(path[env].base))
-    .pipe(livereload());
+    .pipe(livereload({auto: false}));
 }
 
 var scripts = function(env) {
@@ -71,7 +75,20 @@ var scripts = function(env) {
     .pipe(gulp.dest(path.src.scripts))
     .pipe(uglify())
     .pipe(gulp.dest(path.deploy.scripts))
-    .pipe(livereload());
+    .pipe(livereload({auto: false}));
+}
+
+var assets = function(type) {
+  var source = path.src.assets + '/' + type + '/**/*';
+  var compress;
+  if (type === 'img') {
+    var compress = imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })
+  } else {
+    var compress = svgmin();
+  }
+  return gulp.src(source)
+    .pipe(compress)
+    .pipe(gulp.dest(path.deploy.assets + '/' + type))
 }
 
 var move = function() {
@@ -102,6 +119,8 @@ gulp.task('clean', function(){
 gulp.task('build', ['clean'], function(){
   styles('deploy');
   scripts('deploy');
+  assets('img');
+  assets('svg');
   move();
 });
 
